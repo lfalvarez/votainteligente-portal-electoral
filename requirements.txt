@@ -20,7 +20,7 @@ django-tastypie
 django-pagination==1.0.5
 django-celery
 python-memcached
--e git+https://github.com/openpolis/django-popolo.git#egg=django_popolo-dev
+-e git+https://github.com/openpolis/django-popolo.git@5cabccf946006ab6306f90ba5dd51f3e0cf7db82#egg=django_popolo-dev
 django-mathfilters
 django-picklefield
 -e git://github.com/dokterbob/django-newsletter.git#egg=django-newsletter
