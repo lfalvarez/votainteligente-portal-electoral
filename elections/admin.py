@@ -55,6 +55,8 @@ class TakenPositionModelForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(TakenPositionModelForm, self).__init__(*args, **kwargs)
+        self.fields['topic'].queryset = Topic.objects.all()
+        self.fields['position'].queryset = Position.objects.all()
         if self.instance.id:
             positions = self.instance.topic.positions.all()
             self.fields['position'].queryset = positions
@@ -121,8 +123,16 @@ class PositionInline(admin.TabularInline):
     model = Position
 
 
+class TopicModelForm(forms.ModelForm):
+    model = Topic
+    def __init__(self, *args, **kwargs):
+        super(TopicModelForm, self).__init__(*args, **kwargs)
+        self.fields['category'].queryset = QuestionCategory.objects.all()
+
+
 class TopicAdmin(admin.ModelAdmin):
     inlines = [PositionInline, ]
+    form = TopicModelForm
     list_display = ('__str__', 'election')
     search_fields = ['label', 'category__name']
 
@@ -215,11 +225,6 @@ class ElectionAdmin(admin.ModelAdmin):
 admin.site.register(Election, ElectionAdmin)
 
 
-class OrgnizationAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Organization, OrgnizationAdmin)
-
-
 class ContactDetailInline(GenericTabularInline):
     model = ContactDetail
     fields = ('label', 'contact_type', 'value')
@@ -272,11 +277,6 @@ admin.site.register(Candidate, CandidateAdmin)
 class CandidateFlatPageAdmin(admin.ModelAdmin):
     pass
 admin.site.register(CandidateFlatPage, CandidateFlatPageAdmin)
-
-
-class PostAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Post, PostAdmin)
 
 
 class AreaAdmin(admin.ModelAdmin):
