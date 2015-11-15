@@ -23,11 +23,15 @@ Before the installation process is started a number of requirements is needed
 - [Git](http://git-scm.com/)
 - The requirements that [sorl-thumbnail has](http://sorl-thumbnail.readthedocs.org/en/latest/requirements.html)
 
+Anyway, this command should install all you need:
+
+`sudo apt-get install virtualenv virtualenvwrapper python git g++ imagemagick`
+
 ## Installation process
 
 * Clone votainteligente somewhere in your system.
 
-`git clone https://github.com/ciudadanointeligente/votainteligente-portal-electoral.git`
+`git clone https://github.com/YoQuieroSaber/votainteligente-portal-electoral.git`
 
 Enter the installation directory
 
@@ -39,7 +43,7 @@ Enter the installation directory
 
 * Activate your virtual environment
 
-`sorce votainteligente/bin/activate`
+`source votainteligente/bin/activate`
 
 * Install the requirements that votainteligente needs in the current virtualenvironment
 
@@ -55,42 +59,13 @@ Update the tables with migrations
 
 `python manage.py migrate`
 
-## Bringing elections from candideit.org
-
-Elections in VotaInteligente have a one-to-one relation with elections in candideit.org, so for your installation you'll first need to create an election in [candideit.org](http://candideit.org) and follow the next steps.
-
-Specifically for this installation we are not using popit (But we'll soon be doing so).
-
-* Create the file votainteligente/local_settings.py with the following content.
-
-```
-USE_POPIT = False
-
-CANDIDEITORG_URL = http://candideit.org/api/v2/'
-
-CANDIDEITORG_USERNAME = 'YOUR-CANDIDEITORG-USERNAME'
-
-CANDIDEITORG_API_KEY = 'YOUR-CANDIDEITORG-APIKEY'
-
-```
-
-* Getting your elections from candideit.org into your installation.
-
-You need to run the following command
-
-`python manage.py update_from_candidator`
-
-* Running VotaInteligente
-
-`python manage.py runserver`
-
-And hit http://localhost:8000/.
-
 ## Theming
 
 ### Previously created themes
 
 * [votainteligente-venezuela-theme](https://github.com/ciudadanointeligente/votainteligente-venezuela-theme) is the theme for [eligetucandidato.org](http://eligetucandidato.org/)
+* [votai-theme](https://github.com/YoQuieroSaber/votai-theme) is the theme for the YoQuieroSaber.org Argentinian gamified instance.
+
 
 ### Creating your own custom theme
 
