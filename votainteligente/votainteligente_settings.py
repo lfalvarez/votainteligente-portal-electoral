@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'newsletter',
     # Uncomment the next line to enable admin documentation:
     #'django.contrib.admindocs',
+    'writeit',
 )
 
 
