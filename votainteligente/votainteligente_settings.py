@@ -42,9 +42,11 @@ INSTALLED_APPS = (
     'djcelery',
     'mathfilters',
     'newsletter',
+    'rest_framework',
+    'popolorest',
+    'writeit',
     # Uncomment the next line to enable admin documentation:
     #'django.contrib.admindocs',
-    'writeit',
 )
 
 

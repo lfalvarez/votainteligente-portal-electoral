@@ -1,10 +1,10 @@
 Django==1.8.1
 django-nose
-django-autoslug
+django-autoslug==1.8.0
 django-taggit
 loremipsum
-elasticsearch
-django-haystack
+elasticsearch==1.6.0
+django-haystack==2.4.0
 -e git://github.com/lfalvarez/django-candidator.git#egg=django-candidator
 PyYAML
 django-markdown-deux==1.0.4
@@ -18,9 +18,16 @@ django-registration
 mimeparse
 django-tastypie
 django-pagination==1.0.5
-django-celery
+celery==3.1.18
+django-celery==3.1.16
 python-memcached
--e git+https://github.com/openpolis/django-popolo.git@5cabccf946006ab6306f90ba5dd51f3e0cf7db82#egg=django_popolo-dev
+-e git+https://github.com/openpolis/django-popolo.git@d0344349c46bf100f7258b0de0ed1fb12320c945#egg=django_popolo-dev
 django-mathfilters
 django-picklefield
--e git://github.com/dokterbob/django-newsletter.git#egg=django-newsletter
+-e git+https://github.com/dokterbob/django-newsletter#egg=django_newsletter
+djangorestframework==3.2.3
+slumber
+-e git+https://github.com/ciudadanointeligente/writeit-django.git#egg=writeit-django
+-e git+https://github.com/ciudadanointeligente/popolorest@redisplaying_info_as_popit_does#egg=popolorest
+mock
+
