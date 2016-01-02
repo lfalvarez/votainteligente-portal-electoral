@@ -2,12 +2,13 @@ from django.conf.urls import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 
 
 admin.autodiscover()
 admin.site.site_header = getattr(settings, 'ADMIN_HEADER', 'Vota Inteligente')
 
-urlpatterns = patterns('',
+urlpatterns = i18n_patterns('',
     # Examples:
     # url(r'^$', 'votainteligente.views.home', name='home'),
     # url(r'^votainteligente/', include('votainteligente.foo.urls')),
