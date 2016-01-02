@@ -7,11 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-20 14:40-0300\n"
+"POT-Creation-Date: 2015-12-09 19:48+0000\n"
 "PO-Revision-Date: 2015-07-20 14:41-0300\n"
 "Last-Translator: Lab at Ciudadano Inteligente <lab@ciudadanointeligente."
 "org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,66 +22,117 @@ msgstr ""
 msgid "Busca tu comuna"
 msgstr "Busca tu municipalidad"
 
-#: models.py:42
+#: models.py:37
+msgid ""
+"Marca esto si quieres que el candidato aparezca como que no ha respondido"
+msgstr ""
+
+#: models.py:39
+msgid "Marca esto si quieres el candidato no pas&oacute; las primarias"
+msgstr ""
+
+#: models.py:62
 msgid "Candidato"
 msgstr ""
 
-#: models.py:43
+#: models.py:63
 msgid "Candidatos"
 msgstr ""
 
-#: models.py:50
+#: models.py:70
 msgid "Página estáticas por candidato"
 msgstr ""
 
-#: models.py:51
+#: models.py:71
 msgid "Páginas estáticas por candidato"
 msgstr ""
 
-#: models.py:70
+#: models.py:91
 msgid "Pregunta"
 msgstr ""
 
-#: models.py:71
+#: models.py:92
 msgid "Preguntas"
 msgstr ""
 
-#: models.py:87
+#: models.py:111
 msgid "Categoría de pregunta"
 msgstr ""
 
-#: models.py:88
+#: models.py:112
 msgid "Categorías de pregunta"
 msgstr ""
 
-#: models.py:99
+#: models.py:123
 msgid "Puedes usar Markdown. <br/> "
 msgstr ""
 
-#: models.py:101
+#: models.py:125
 msgid "Esta elección debe usar preguntales?"
 msgstr ""
 
-#: models.py:102
+#: models.py:126
 msgid "Esta elección debe usar ranking"
 msgstr ""
 
-#: models.py:103
+#: models.py:127
 msgid "Esta elección debe usar frente a frente"
 msgstr ""
 
-#: models.py:104
+#: models.py:128
 msgid "Esta elección debe usar 1/2 naranja"
 msgstr ""
 
-#: models.py:105
+#: models.py:129
 msgid "Esta elección debe usar cuestionario"
 msgstr ""
 
-#: models.py:120
+#: models.py:144
 msgid "Mi Elección"
 msgstr ""
 
-#: models.py:121
+#: models.py:145
 msgid "Mis Elecciones"
+msgstr ""
+
+#: models.py:164
+msgid "Mensaje de preguntales"
+msgstr ""
+
+#: models.py:165
+msgid "Mensajes de preguntales"
+msgstr ""
+
+#: preguntales_forms.py:20
+msgid "Nombre"
+msgstr ""
+
+#: preguntales_forms.py:21
+msgid "Correo electrónico"
+msgstr ""
+
+#: preguntales_forms.py:22
+msgid "Asunto"
+msgstr ""
+
+#: preguntales_forms.py:23
+msgid "texto"
+msgstr ""
+
+#: preguntales_forms.py:24
+msgid "Destinatarios"
+msgstr ""
+
+#: preguntales_forms.py:27
+msgid "Puedes seleccinar a más de un candidato para dirigir tu pregunta"
+msgstr ""
+
+#: preguntales_forms.py:28
+msgid ""
+"Identíficate de alguna forma: Estudiante, Obrero, Democrático, Dirigente, "
+"etc."
+msgstr ""
+
+#: preguntales_forms.py:32
+msgid "Debes identificarte de alguna forma."
 msgstr ""
