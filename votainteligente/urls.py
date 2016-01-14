@@ -27,6 +27,6 @@ urlpatterns = i18n_patterns('',
 
 from django.conf import settings
 if settings.THEME:
-    urlpatterns += patterns('',
+    urlpatterns +=  i18n_patterns('',
         ('^theme/', include('%s.urls' % (settings.THEME)))
         )
