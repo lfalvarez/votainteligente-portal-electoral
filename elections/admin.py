@@ -264,13 +264,11 @@ class CandidateAdmin(admin.ModelAdmin):
         return fieldsets
 
     def save_model(self, request, obj, form, change):
-        creating = not change
         obj.save()
-        if creating:
-            for ele in obj.elections.all():
-                for cat in ele.categories.all():
-                    for topic in cat.topics.all():
-                        TakenPosition.objects.get_or_create(topic=topic, person=obj)
+        for ele in obj.elections.all():
+            for cat in ele.categories.all():
+                for topic in cat.topics.all():
+                    TakenPosition.objects.get_or_create(topic=topic, person=obj)
 
 admin.site.register(Candidate, CandidateAdmin)
 
