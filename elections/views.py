@@ -215,7 +215,15 @@ class CandidateFlatPageDetailView(DetailView):
         print self.kwargs['url']
         if queryset is None:
             queryset = self.get_queryset()
-        return queryset.get(url=self.kwargs['url'])
+
+        args = self.kwargs;
+
+        try:
+            flatpage = queryset.get(url=self.kwargs['url']);
+        except:
+            flatpage = Candidate.objects.get(id=self.kwargs['url']);
+
+        return flatpage;
 
     def get_context_data(self, **kwargs):
         context = super(CandidateFlatPageDetailView, self)\
