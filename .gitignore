@@ -1,0 +1,11 @@
+--2019-11-19 17:15:43--  https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.0.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1799 (1.8K) [text/plain]
+Saving to: ‘Python.gitignore’
+
+     0K .                                                     100% 81.7M=0s
+
+2019-11-19 17:15:44 (81.7 MB/s) - ‘Python.gitignore’ saved [1799/1799]
+
