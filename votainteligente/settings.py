@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+##TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,8 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django.contrib.sites',
+    'test_without_migrations',
+    'django_nose',
+    'django_extensions',
+    'votai_utils',
     'popolo',
+    'elections',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +89,7 @@ DATABASES = {
     }
 }
 
-
+SITE_ID = 1
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -120,3 +127,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+TEST_WITHOUT_MIGRATIONS_COMMAND = 'django_nose.management.commands.test.Command'

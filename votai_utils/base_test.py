@@ -1,10 +1,17 @@
+from django.test import TestCase
+
+# Create your tests here.
+
 from django.test import TestCase, override_settings
 from PIL import Image
-from io import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 from django.core.files.base import ContentFile
 import random
 import os
-__dir__ = os.path.dirname(os.path.realpath(__file__))
+current_dir_name = os.chdir(os.path.dirname(__file__))
 
 
 @override_settings(THEME=None)
@@ -25,5 +32,5 @@ class VotaInteligenteTestCase(TestCase):
         return ContentFile(image_file.read(), 'test.png')
 
     def get_document(self):
-        pdf_file = open(__dir__ + '/fixtures/example.pdf')
+        pdf_file = open(current_dir_name + '/fixtures/example.pdf')
         return ContentFile(pdf_file.read(), 'example.pdf')
