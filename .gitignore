@@ -26,3 +26,8 @@ preguntales/tests/testing_mails/attachments/hello.pd_*.pdf
 .idea/
 glenv/
 whoosh_index/
+organizations/
+proposals/
+uploads/
+tmp/
+users/
