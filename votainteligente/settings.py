@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'backend_staff',
     'medianaranja2',
     'proposal_subscriptions',
+    'suggestions_for_candidates',
     'votai_general_theme',
 ]
 

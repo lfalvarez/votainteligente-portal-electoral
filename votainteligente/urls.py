@@ -16,6 +16,7 @@ urlpatterns = [
 
     path('media_naranja', include(('medianaranja2.urls', 'medianaranja2'), namespace='medianaranja2')),
     path('proposal_subscriptions', include(('proposal_subscriptions.urls', 'proposal_subscriptions'), namespace='proposal_subscriptions')),
+    path('suggestions/', include(('suggestions_for_candidates.urls', 'suggestions_for_candidates'), namespace='suggestions_for_candidates')),
     path('ayudanos/',
          HelpFindingCandidates.as_view(),
          name='help'),
