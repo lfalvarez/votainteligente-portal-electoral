@@ -32,3 +32,4 @@ proposals/
 uploads/
 tmp/
 users/
+*.sqlite3
