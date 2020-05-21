@@ -40,12 +40,37 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_celery_results',
+    'sorl.thumbnail',
+    'bootstrap3',
+    'sass_processor',
+    'hitcount',
+    'el_pagination',
+    'social_django',
+    'constance.backends.database',
+    'markdown_deux',
+    'django_ogp',
     'test_without_migrations',
+    'django_filters',
     'django_nose',
     'django_extensions',
-    'votai_utils',
+    'django.contrib.flatpages',
+    'rest_framework',
+    'haystack',
+    'taggit',
     'popolo',
+    'candidator',
+    'votai_utils',
+    'agenda',
     'elections',
+    'backend_candidate',
+    'popular_proposal',
+    'organization_profiles',
+    'backend_citizen',
+    'backend_staff',
+    'medianaranja2',
+    'proposal_subscriptions',
+    'votai_general_theme',
 ]
 
 MIDDLEWARE = [
@@ -71,13 +96,33 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    ##'votainteligente.authentication_backend.VotaIAuthenticationBackend',
+)
+
 WSGI_APPLICATION = 'votainteligente.wsgi.application'
 
+ACCOUNT_ACTIVATION_DAYS = 7
+
+# CELERY STUFF
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost'
+
+#: Only add pickle to this list if your broker is secured
+#: from unwanted access (see userguide/security.html)
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+CELERY_TASK_SERIALIZER = 'pickle'
+CELERY_TASK_ALWAYS_EAGER = True
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -88,7 +133,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
+}
 SITE_ID = 1
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -129,3 +179,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 TEST_WITHOUT_MIGRATIONS_COMMAND = 'django_nose.management.commands.test.Command'
+
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+from .votainteligente_settings import *
