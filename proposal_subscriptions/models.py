@@ -15,8 +15,8 @@ from votai_utils.send_mails import send_mail
 
 class SearchSubscription(models.Model):
     user = models.ForeignKey(User, related_name="search_subscriptions", on_delete=models.CASCADE)
-    keyword_args = PickledObjectField(default={})
-    search_params = PickledObjectField(default={})
+    keyword_args = PickledObjectField(default=dict)
+    search_params = PickledObjectField(default=dict)
     filter_class_module = models.CharField(max_length=254)
     filter_class_name = models.CharField(max_length=254)
     oftenity = models.DurationField(help_text=_(u"Cada cuanto te notificamos?"))

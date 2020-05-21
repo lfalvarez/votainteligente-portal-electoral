@@ -51,7 +51,7 @@ urlpatterns = [
                 CandidateDetailView.as_view(template_name='elections/candidate_detail.html')),
             name='candidate_detail_view_area'
             ),
-    path('eleccion/<slug:slug>/extra_info.html$',
+    path('eleccion/<slug:slug>/extra_info.html',
             ElectionDetailView.as_view(template_name='elections/extra_info.html'),
             name='election_extra_info'),
     path('candidaturas/<slug>',

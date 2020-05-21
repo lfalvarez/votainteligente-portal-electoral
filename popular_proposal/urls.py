@@ -35,7 +35,7 @@ urlpatterns = [
     path('create_wizard/<slug:slug>',
         ProposalWizard.as_view(),
         name='propose_wizard'),
-    path('^nueva',
+    path('nueva',
         ProposalWizardFull.as_view(),
         name='propose_wizard_full'),
     path('crear',

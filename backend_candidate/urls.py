@@ -40,7 +40,7 @@ urlpatterns = [
     path('all_my_activities/<slug:slug>',
             MyActivitiesListView.as_view(),
             name='all_my_activities'),
-    path('gracias_totales/$',
+    path('gracias_totales/',
             TemplateView.as_view(template_name='backend_candidate/thanks_for_commiting.html'),
             name='thanks_for_commiting'),
 ]
