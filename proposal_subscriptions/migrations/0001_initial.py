@@ -33,8 +33,8 @@ class Migration(migrations.Migration):
             name='SearchSubscription',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('keyword_args', picklefield.fields.PickledObjectField(editable=False, default={})),
-                ('search_params', picklefield.fields.PickledObjectField(editable=False, default={})),
+                ('keyword_args', picklefield.fields.PickledObjectField(editable=False, default=dict)),
+                ('search_params', picklefield.fields.PickledObjectField(editable=False, default=dict)),
                 ('filter_class_module', models.CharField(max_length=254)),
                 ('filter_class_name', models.CharField(max_length=254)),
                 ('oftenity', models.DurationField(help_text='Cada cuanto te notificamos?')),

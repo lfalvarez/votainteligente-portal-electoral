@@ -1,7 +1,10 @@
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 from django.contrib.auth.views import LoginView
 from votainteligente.rest_api_router import router
+from django.conf import settings
+from django.conf.urls.static import static
 
 from backend_candidate.views import HelpFindingCandidates
 
@@ -32,3 +35,4 @@ urlpatterns = [
          name='username_and_password'),
     path('api/', include(router.urls)),
 ]
+urlpatterns += staticfiles_urlpatterns()
